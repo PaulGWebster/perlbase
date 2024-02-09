@@ -124,11 +124,6 @@ COPY --from=build /usr /usr
 # Strip any unneeded files
 # TODO
 
-# Copy in the entrypoint script
-
-COPY asset/src/system/entrypoint.pl /entrypoint
-RUN chmod +x /entrypoint
-
 # Final setup
 
 ENV PERL5LIB=/usr/share/perl5:$PERL5LIB
@@ -149,7 +144,6 @@ RUN cat /home/perl/auth/*.pub > /home/perl/.ssh/authorized_keys \
 RUN perl -MCPAN -Mlocal::lib -e 'CPAN::install(LWP)' \
     && echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"' >> ~/.bashrc
 
-# Have to run the sshd as root
 USER root
 
 COPY asset/src/system/apt /var/lib/apt/
@@ -166,6 +160,9 @@ ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US:en  
 ENV LC_ALL=en_US.UTF-8
 
-USER root
+# Copy in the entrypoint script
+
+COPY asset/src/system/entrypoint.pl /entrypoint
+RUN chmod +x /entrypoint
 
 CMD ["/bin/bash"]
