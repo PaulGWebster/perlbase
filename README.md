@@ -3,15 +3,15 @@
 A small project to create a all inclusive docker image that is the perfect 
 development environment for a perl project.
 
-Included are:
-    * Perl 5.36.3
-    * Integrated ssh server that can be enabled or disabled (default is disabled)
-      * Ability to use ssh keys to connect to the container
-    * Pre initilized lib::local
-    * Precreated user with no password auth 'perl'
-    * PostgreSQL 16.2 (server and client)
-    * A carton bunled set of system modules
-      * see [cpanfile](asset/src/carton/cpanfile) for a list of modules
+*Included are:*
+- Perl 5.36.3
+- Integrated ssh server that can be enabled or disabled (default is disabled)
+    - Ability to use ssh keys to connect to the container
+- Pre initialized lib::local
+- Precreated user with no password auth 'perl'
+- PostgreSQL 16.2 (server and client)
+- A carton bundled set of system modules
+    - see [cpanfile](asset/src/carton/cpanfile) for a list of modules
 
 ## Table of Contents
 
@@ -39,36 +39,36 @@ Provide a brief overview of the project, its purpose, and any relevant backgroun
 The following environment variables are used in the project:
 
 * ENTRYPOINT_CMD
-  * The command to run when the container starts
-  * Default: /nocmd
+  - The command to run when the container starts
+  - Default: /nocmd
 * SSH_ENABLE
-  * Whether to enable the ssh server
-  * Default: no
+  - Whether to enable the ssh server
+  - Default: no
 
 ### DockerHub
 
 > The image is available on dockerhub at [paulgwebster/perlbase](https://hub.docker.com/repository/docker/paulgwebster/perlbase)
 
-  * docker run -it -e 'SSH_ENABLE=yes' -p 2222:22 paulgwebster/perlbase:latest /entrypoint.sh
-    * This will start the container with ssh enabled and run the entrypoint
-    * If you wished for the entrypont to run a different command, you can set the ENTRYPOINT_CMD environment variable
-    * an example for docker run would be adding the -e 'ENTRYPOINT_CMD=/bin/bash' 
+  - docker run -it -e 'SSH_ENABLE=yes' -p 2222:22 paulgwebster/perlbase:latest /entrypoint.sh
+    - This will start the container with ssh enabled and run the entrypoint
+    - If you wished for the entrypont to run a different command, you can set the ENTRYPOINT_CMD environment variable
+    - an example for docker run would be adding the -e 'ENTRYPOINT_CMD=/bin/bash' 
 
 ### Source
 
 To run the project locally, follow these steps:
 
 1. Clone the repository to your local machine.
-   * git clone https://github.com/PaulGWebster/perlbase.git
+   - git clone https://github.com/PaulGWebster/perlbase.git
 2. cd perlbase
 3. read [auth/README.md](auth/README.md)
-   * Follow the instructions to create your own ssh keys
-   * If you already have a public key or you do not wish to access the image with ssh, you can skip this step
+   - Follow the instructions to create your own ssh keys
+   - If you already have a public key or you do not wish to access the image with ssh, you can skip this step
 4. ./recreateimages.sh
-   * When prompted for if the image should be loaded, type 'y' and press enter.
- * docker build . -t perlbase:latest
-   * This will take a while!  Go get a cup of tea.
-   * It takes around 10 minutes on an AMD Ryzen 7 5800X 8-Core Processor
+   - When prompted for if the image should be loaded, type 'y' and press enter.
+ - docker build . -t perlbase:latest
+   - This will take a while!  Go get a cup of tea.
+   - It takes around 10 minutes on an AMD Ryzen 7 5800X 8-Core Processor
 5. docker-compose up
 
 ### Prerequisites
