@@ -157,4 +157,8 @@ RUN cat /home/perl/auth/*.pub > /home/perl/.ssh/authorized_keys \
 RUN perl -MCPAN -Mlocal::lib -e 'CPAN::install(LWP)' \
     && echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"' >> ~/.bashrc
 
+# Have to run the sshd as root
+USER root
+
 CMD ["/bin/bash"]
+
