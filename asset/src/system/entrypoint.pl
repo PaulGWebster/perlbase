@@ -23,11 +23,7 @@ if (scalar(@ARGV) > 1) {
     );
 }
 elsif (!$ENV{'ENTRYPOINT_CMD'} || $ENV{'ENTRYPOINT_CMD'} eq '') {
-    say STDERR gen_seperator(
-        'Warning: no command specified, defaulting to blocking loop, '
-        . 'please use ENV{ENTRYPOINT_CMD} to specify a command'
-    );
-    $ENV{'ENTRYPOINT_CMD'} = q(perl -e 'while(sleep(60)){ print "ENTRYPOINT_CMD missing, set it\n" }');
+    $ENV{'ENTRYPOINT_CMD'} = q(/nocmd);
 }
 
 # Make both STDERR and STDOUT hot
