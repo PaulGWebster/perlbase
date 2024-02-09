@@ -3,16 +3,16 @@ FROM gcc:13.2.0 AS base
 COPY asset/src/system/apt /var/lib/apt/
 COPY asset/src/system/cache /var/cache/
 
-RUN apt install -y openssh-server \
-    && apt clean \
+RUN apt-get update && apt-get install -y openssh-server \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 RUN adduser --disabled-password --gecos "" perl
 
 USER perl
 
-RUN ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ''
-RUN cat ~/.ssh/*.pub > ~/.ssh/authorized_keys
+RUN ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N '' \
+    && cat ~/.ssh/*.pub > ~/.ssh/authorized_keys
 
 USER root
 
@@ -35,11 +35,11 @@ RUN ./Configure \
         -Duselargefiles \
         -Duse64bitint \
         -Dusequadmath \
-    && make \
+    && make -j4 \
     && make install \
-    && rm -Rf /build/perl
+    && rm -rf /build/perl
  
-# Build python Python-3.11.2
+# Build Python-3.11.2
 
 RUN mkdir -p /build/python
 COPY asset/src/Python-* /build/python
@@ -52,7 +52,7 @@ RUN ./configure \
     --prefix=/usr \
     && make -j4 \
     && make install \
-    && rm -Rf /build/python
+    && rm -rf /build/python
 
 # Build cpanm
 
@@ -64,7 +64,7 @@ WORKDIR /build/cpanm
 RUN perl Makefile.PL \
     && make \
     && make install \
-    && rm -Rf /build/cpanm  
+    && rm -rf /build/cpanm  
 
 # Build lib local
 
@@ -76,7 +76,7 @@ WORKDIR /build/liblocal
 RUN perl Makefile.PL \
     && make \
     && make install \
-    && rm -Rf /build/liblocal
+    && rm -rf /build/liblocal
 
 # Build lz4
 
@@ -88,7 +88,7 @@ WORKDIR /build/lz4
 RUN make -j4 \
     && make \
     && make install \
-    && rm -Rf /build/lz4
+    && rm -rf /build/lz4
 
 # Build postgresql
 
@@ -108,7 +108,7 @@ RUN ./configure \
         --prefix=/usr \
     && make -j4 \
     && make install \
-    && rm -Rf /build/postgresql
+    && rm -rf /build/postgresql
 
 # Install Carton
 
@@ -118,11 +118,11 @@ COPY asset/src/carton /build/carton
 WORKDIR /build/carton
 
 RUN cpanm --from "$PWD/vendor/cache" --installdeps --notest --quiet .
-RUN rm -Rf /build/carton
+RUN rm -rf /build/carton
 
 # Clean up
 
-RUN rm -Rf /build
+RUN rm -rf /build
 
 FROM base AS final
 
@@ -133,8 +133,7 @@ COPY --from=build /bin /bin
 COPY --from=build /etc /etc
 COPY --from=build /lib /lib
 COPY --from=build /usr /usr
-COPY --from=build /home/perl /home/perl
-RUN chown -R perl:perl /home/perl
+COPY --from=build --chown=perl:perl /home/perl /home/perl
 
 # Strip any unneeded files
 # TODO
@@ -153,9 +152,9 @@ RUN mkdir -p /home/perl/auth
 COPY auth/*.pub /home/perl/auth/
 RUN cat /home/perl/auth/*.pub > /home/perl/.ssh/authorized_keys \
     && chmod 600 /home/perl/.ssh/authorized_keys \
-    && rm -Rf /home/perl/auth
+    && rm -rf /home/perl/auth
 
 RUN perl -MCPAN -Mlocal::lib -e 'CPAN::install(LWP)' \
-    && echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"' >>~/.bashrc
+    && echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"' >> ~/.bashrc
 
 CMD ["/bin/bash"]
