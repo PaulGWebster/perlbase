@@ -1,0 +1,11 @@
+version: '3'
+services:
+  bot:
+    image: binancebotbase:1
+    # ports:
+    #   - "80:80"
+    # depends_on:
+    #   - mariadb
+    environment:
+      SSH_ENABLE: "true"
+    entrypoint: /entrypoint perl -E 'while(1){say "Hello, World!"; sleep(5)'
