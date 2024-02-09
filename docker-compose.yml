@@ -1,7 +1,7 @@
 version: '3'
 services:
   bot:
-    image: binancebotbase:1
+    image: perlbase:latest
     ports:
       - "2222:22"
     environment:
