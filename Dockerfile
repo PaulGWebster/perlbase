@@ -1,19 +1,5 @@
 FROM gcc:13.2.0 AS base
 
-COPY asset/src/system/apt /var/lib/apt/
-COPY asset/src/system/cache /var/cache/
-
-RUN apt-get update && apt-get install -y openssh-server \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN adduser --disabled-password --gecos "" perl
-
-USER perl
-
-RUN ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N '' \
-    && cat ~/.ssh/*.pub > ~/.ssh/authorized_keys
-
 USER root
 
 RUN mkdir /run/sshd
@@ -133,7 +119,7 @@ COPY --from=build /bin /bin
 COPY --from=build /etc /etc
 COPY --from=build /lib /lib
 COPY --from=build /usr /usr
-COPY --from=build --chown=perl:perl /home/perl /home/perl
+# COPY --from=build --chown=perl:perl /home/perl /home/perl
 
 # Strip any unneeded files
 # TODO
@@ -145,8 +131,14 @@ RUN chmod +x /entrypoint
 
 # Final setup
 
+ENV PERL5LIB=/usr/share/perl5:$PERL5LIB
+RUN adduser --disabled-password --gecos "" perl
+
 USER perl
 WORKDIR /home/perl
+
+RUN ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N '' \
+    && cat ~/.ssh/*.pub > ~/.ssh/authorized_keys
 
 RUN mkdir -p /home/perl/auth
 COPY auth/*.pub /home/perl/auth/
@@ -160,5 +152,20 @@ RUN perl -MCPAN -Mlocal::lib -e 'CPAN::install(LWP)' \
 # Have to run the sshd as root
 USER root
 
-CMD ["/bin/bash"]
+COPY asset/src/system/apt /var/lib/apt/
+COPY asset/src/system/cache /var/cache/
 
+RUN apt-get install -y \
+    /var/cache/apt/archives/locales_* \
+    /var/cache/apt/archives/openssh-server_*
+
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
+    locale-gen
+
+ENV LANG=en_US.UTF-8  
+ENV LANGUAGE=en_US:en  
+ENV LC_ALL=en_US.UTF-8
+
+USER root
+
+CMD ["/bin/bash"]
