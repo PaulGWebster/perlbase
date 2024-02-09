@@ -141,8 +141,7 @@ RUN cat /home/perl/auth/*.pub > /home/perl/.ssh/authorized_keys \
     && chmod 600 /home/perl/.ssh/authorized_keys \
     && rm -rf /home/perl/auth
 
-RUN perl -MCPAN -Mlocal::lib -e 'CPAN::install(LWP)' \
-    && echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"' >> ~/.bashrc
+RUN echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"' >> ~/.bashrc
 
 USER root
 
@@ -160,9 +159,10 @@ ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US:en  
 ENV LC_ALL=en_US.UTF-8
 
-# Copy in the entrypoint script
-
+# Copy in the system support scripts
 COPY asset/src/system/entrypoint.pl /entrypoint
 RUN chmod +x /entrypoint
+COPY asset/src/system/nocmd.pl /nocmd
+RUN chmod +x /nocmd
 
 CMD ["/bin/bash"]
