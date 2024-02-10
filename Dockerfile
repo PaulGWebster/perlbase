@@ -165,4 +165,7 @@ RUN chmod +x /entrypoint
 COPY asset/src/system/nocmd.pl /nocmd
 RUN chmod +x /nocmd
 
+# Remove the ability to login with passwords at all
+RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+
 CMD ["/bin/bash"]
