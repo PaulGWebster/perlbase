@@ -4,6 +4,7 @@ use warnings;
 use strict;
 
 use v5.30;
+use Env;
 
 use IPC::Open3 qw( open3 );
 use Symbol qw( gensym );
@@ -83,25 +84,23 @@ sub gen_seperator {
     }
 }
 
-# Check if command is specified
-if (!$cmd) {
-    die "Command not specified. ./entrypoint <command and args here>\n";
-}
-
 say STDERR gen_seperator('Raw Passed Arguments');
 if ($cmd_mode eq 'ARGV') {
     say STDERR gen_seperator(join(' ', @ARGV));
 } else {
     say STDERR gen_seperator($ENV{'ENTRYPOINT_CMD'});
 }
-say STDERR gen_seperator('');
 
-# Check for environmental hints
-if ($ENV{'SSH_ENABLE'}) {
-    gen_seperator("Starting SSH Service: " . `service ssh start`);
+if ($ENV{'SSH_ENABLE'} && (lc($ENV{'SSH_ENABLE'}) eq 'true') || (lc($ENV{'SSH_ENABLE'}) eq 'yes')) {
+    say STDERR gen_seperator('SSH Service enabled');
+    my $start_ssh = `service ssh start`;
+    chomp($start_ssh);
+    say STDERR gen_seperator($start_ssh);
 } else {
-    gen_seperator("SSH Service not enabled");
+    say STDERR gen_seperator("SSH Service not enabled");
 }
+
+say STDERR gen_seperator(q(Beginning command execution));
 
 # Use open3 to run the command as the specified user and capture stdout and stderr
 my $out = gensym;
@@ -126,7 +125,7 @@ while ($sel->count > 0) {
         if (defined $line) {
             # Print the line to the appropriate output
             if ($fh == $out) {
-                print "STDOUT: $line";
+                print STDOUT "STDOUT: $line";
             } else {
                 print STDERR "STDERR: $line";
             }
