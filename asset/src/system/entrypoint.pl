@@ -55,7 +55,7 @@ if ($cmd_mode eq 'ARGV') {
 }
 
 if (
-    $ENV{'SSH_ENABLE'}
+    defined $ENV{'SSH_ENABLE'}
     && (
         lc($ENV{'SSH_ENABLE'}) eq 'true')
         || (lc($ENV{'SSH_ENABLE'}) eq 'yes')
