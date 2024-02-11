@@ -29,10 +29,8 @@ my $select = IO::Select->new();
 my $cmd_mode = 'ENV';
 if (scalar(@ARGV) > 1) {
     $cmd_mode = 'ARGV';
-    say STDERR gen_seperator(
-        'Warning: Using ARGV for command inclusion, please use '
-        .'ENV{ENTRYPOINT_CMD} instead'
-    );
+    say STDERR q(Warning: Using ARGV for command inclusion, please use
+                ENV{ENTRYPOINT_CMD} instead);
 }
 elsif (!$ENV{'ENTRYPOINT_CMD'} || $ENV{'ENTRYPOINT_CMD'} eq '') {
     $ENV{'ENTRYPOINT_CMD'} = q(/nocmd);
