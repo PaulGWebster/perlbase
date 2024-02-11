@@ -11,9 +11,7 @@ use Data::Dumper;
 
 use IPC::Open3 qw( open3 );
 use Symbol qw( gensym );
-use IO::Handle;
 use IO::Select;
-use Text::ParseWords qw( shellwords quotewords );
 use Time::HiRes qw( sleep usleep );
 
 # Make STDOUT hot
