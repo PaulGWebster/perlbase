@@ -51,7 +51,11 @@ requires 'Net::SSLeay', '1.94';
 requires 'IO::Socket::SSL', '2.085';
 requires 'LWP::Protocol::https', '6.07';
 
+# PerlBrew
+requires 'App::perlbrew', '0.98';
+
 # General support libs
 requires 'Archive::Tar', '3.02';
 requires 'Archive::Zip', '1.68';
 requires 'Net::FTP', '3.15';
+

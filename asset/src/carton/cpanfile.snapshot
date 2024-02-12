@@ -1,5 +1,26 @@
 # carton snapshot format: version 1.0
 DISTRIBUTIONS
+  App-perlbrew-0.98
+    pathname: G/GU/GUGOD/App-perlbrew-0.98.tar.gz
+    provides:
+      App::Perlbrew::HTTP undef
+      App::Perlbrew::Path undef
+      App::Perlbrew::Path::Installation undef
+      App::Perlbrew::Path::Installations undef
+      App::Perlbrew::Path::Root undef
+      App::Perlbrew::Util undef
+      App::perlbrew 0.98
+    requirements:
+      CPAN::Perl::Releases 5.20230720
+      Capture::Tiny 0.48
+      Devel::PatchPerl 2.08
+      ExtUtils::MakeMaker 7.22
+      File::Copy 0
+      File::Temp 0.2304
+      JSON::PP 0
+      Module::Build::Tiny 0.039
+      Pod::Usage 1.69
+      local::lib 2.000014
   Archive-Tar-3.02
     pathname: B/BI/BINGOS/Archive-Tar-3.02.tar.gz
     provides:
@@ -97,6 +118,13 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
+  CPAN-Perl-Releases-5.20240120
+    pathname: B/BI/BINGOS/CPAN-Perl-Releases-5.20240120.tar.gz
+    provides:
+      CPAN::Perl::Releases 5.20240120
+    requirements:
+      ExtUtils::MakeMaker 0
+      perl 5.006000
   Capture-Tiny-0.48
     pathname: D/DA/DAGOLDEN/Capture-Tiny-0.48.tar.gz
     provides:
@@ -170,6 +198,20 @@ DISTRIBUTIONS
       Clone 0.46
     requirements:
       ExtUtils::MakeMaker 0
+  Devel-PatchPerl-2.08
+    pathname: B/BI/BINGOS/Devel-PatchPerl-2.08.tar.gz
+    provides:
+      Devel::PatchPerl 2.08
+      Devel::PatchPerl::Hints 2.08
+      Devel::PatchPerl::Plugin 2.08
+    requirements:
+      ExtUtils::MakeMaker 0
+      File::pushd 1.00
+      Getopt::Long 0
+      IO::File 0
+      MIME::Base64 0
+      Module::Pluggable 0
+      perl 5.006000
   Encode-Locale-1.05
     pathname: G/GA/GAAS/Encode-Locale-1.05.tar.gz
     provides:
@@ -511,6 +553,22 @@ DISTRIBUTIONS
       CPAN::Meta::Prereqs 2.12091
       ExtUtils::MakeMaker 0
       parent 0
+  Module-Pluggable-5.2
+    pathname: S/SI/SIMONW/Module-Pluggable-5.2.tar.gz
+    provides:
+      Devel::InnerPackage 0.4
+      Module::Pluggable 5.2
+      Module::Pluggable::Object 5.2
+    requirements:
+      Exporter 5.57
+      ExtUtils::MakeMaker 0
+      File::Basename 0
+      File::Find 0
+      File::Spec 3.00
+      File::Spec::Functions 0
+      if 0
+      perl 5.00503
+      strict 0
   Mozilla-CA-20231213
     pathname: L/LW/LWP/Mozilla-CA-20231213.tar.gz
     provides:
