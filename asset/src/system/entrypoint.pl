@@ -54,30 +54,36 @@ if ($cmd_mode eq 'ARGV') {
     say STDERR  $ENV{'ENTRYPOINT_CMD'};
 }
 
-if (
-    defined $ENV{'SSH_ENABLE'}
-    && (
-        lc($ENV{'SSH_ENABLE'}) eq 'true')
-        || (lc($ENV{'SSH_ENABLE'}) eq 'yes')
-) {
-    say STDERR  'SSH Service enabled';
-    my $start_ssh = qx(service ssh start);
-    chomp($start_ssh);
-    say STDERR  $start_ssh;
-} else {
+my $ssh_enabled = 0;
+if (defined $ENV{'SSH_ENABLE'}) {
+    if (
+        lc($ENV{'SSH_ENABLE'}) eq 'true'
+        || lc($ENV{'SSH_ENABLE'}) eq 'yes'
+    ) {
+        say STDERR  'SSH Service enabled';
+        my $start_ssh = qx(service ssh start);
+        chomp($start_ssh);
+        say STDERR  $start_ssh;
+        $ssh_enabled = 1;
+    }
+} 
+if ($ssh_enabled == 0) {
     say STDERR  "SSH Service not enabled";
 }
 
-if (
-    defined $ENV{'POSTGRESQL_ENABLE'}
-    && (
-        lc($ENV{'POSTGRESQL_ENABLE'}) eq 'true')
-        || (lc($ENV{'POSTGRESQL_ENABLE'}) eq 'yes')
-) {
-    say STDERR  'PostgreSQL Service enabled';
-    my $start_postgresql = qx(bash /start-postgres);
-    chomp($start_postgresql);
-} else {
+my $postgresql_enabled = 0;
+if (defined $ENV{'POSTGRESQL_ENABLE'}) {
+    if (
+        lc($ENV{'POSTGRESQL_ENABLE'}) eq 'true'
+        || lc($ENV{'POSTGRESQL_ENABLE'}) eq 'yes'
+    ) {
+        say STDERR  'PostgreSQL Service enabled';
+        my $start_postgresql = qx(bash /start-postgres);
+        chomp($start_postgresql);
+        $postgresql_enabled = 1;
+    }
+} 
+if ($postgresql_enabled == 0) {
     say STDERR  "PostgreSQL Service not enabled";
 }
 
