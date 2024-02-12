@@ -37,7 +37,7 @@ DISTRIBUTIONS
       IO::Zlib 1.01
       Test::Harness 2.26
       Test::More 0
-      perl 5.00503
+      perl 5.005030
   Archive-Zip-1.68
     pathname: P/PH/PHRED/Archive-Zip-1.68.tar.gz
     provides:
@@ -540,6 +540,31 @@ DISTRIBUTIONS
       Menlo 1.9018
       perl 5.008001
       version 0.9905
+  Module-Build-Tiny-0.047
+    pathname: L/LE/LEONT/Module-Build-Tiny-0.047.tar.gz
+    provides:
+      Module::Build::Tiny 0.047
+    requirements:
+      CPAN::Meta 0
+      DynaLoader 0
+      Exporter 5.57
+      ExtUtils::CBuilder 0
+      ExtUtils::Config 0.003
+      ExtUtils::Helpers 0.020
+      ExtUtils::Install 0
+      ExtUtils::InstallPaths 0.002
+      ExtUtils::ParseXS 0
+      File::Basename 0
+      File::Find 0
+      File::Path 0
+      File::Spec::Functions 0
+      Getopt::Long 2.36
+      JSON::PP 2
+      Pod::Man 0
+      TAP::Harness::Env 0
+      perl 5.006
+      strict 0
+      warnings 0
   Module-CPANfile-1.1004
     pathname: M/MI/MIYAGAWA/Module-CPANfile-1.1004.tar.gz
     provides:
@@ -567,7 +592,7 @@ DISTRIBUTIONS
       File::Spec 3.00
       File::Spec::Functions 0
       if 0
-      perl 5.00503
+      perl 5.005030
       strict 0
   Mozilla-CA-20231213
     pathname: L/LW/LWP/Mozilla-CA-20231213.tar.gz
@@ -718,56 +743,56 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
-  URI-5.26
-    pathname: O/OA/OALDERS/URI-5.26.tar.gz
+  URI-5.27
+    pathname: O/OA/OALDERS/URI-5.27.tar.gz
     provides:
-      URI 5.26
-      URI::Escape 5.26
-      URI::Heuristic 5.26
-      URI::IRI 5.26
-      URI::QueryParam 5.26
-      URI::Split 5.26
-      URI::URL 5.26
-      URI::WithBase 5.26
-      URI::data 5.26
-      URI::file 5.26
-      URI::file::Base 5.26
-      URI::file::FAT 5.26
-      URI::file::Mac 5.26
-      URI::file::OS2 5.26
-      URI::file::QNX 5.26
-      URI::file::Unix 5.26
-      URI::file::Win32 5.26
-      URI::ftp 5.26
-      URI::geo 5.26
-      URI::gopher 5.26
-      URI::http 5.26
-      URI::https 5.26
-      URI::icap 5.26
-      URI::icaps 5.26
-      URI::ldap 5.26
-      URI::ldapi 5.26
-      URI::ldaps 5.26
-      URI::mailto 5.26
-      URI::mms 5.26
-      URI::news 5.26
-      URI::nntp 5.26
-      URI::nntps 5.26
-      URI::pop 5.26
-      URI::rlogin 5.26
-      URI::rsync 5.26
-      URI::rtsp 5.26
-      URI::rtspu 5.26
-      URI::sftp 5.26
-      URI::sip 5.26
-      URI::sips 5.26
-      URI::snews 5.26
-      URI::ssh 5.26
-      URI::telnet 5.26
-      URI::tn3270 5.26
-      URI::urn 5.26
-      URI::urn::isbn 5.26
-      URI::urn::oid 5.26
+      URI 5.27
+      URI::Escape 5.27
+      URI::Heuristic 5.27
+      URI::IRI 5.27
+      URI::QueryParam 5.27
+      URI::Split 5.27
+      URI::URL 5.27
+      URI::WithBase 5.27
+      URI::data 5.27
+      URI::file 5.27
+      URI::file::Base 5.27
+      URI::file::FAT 5.27
+      URI::file::Mac 5.27
+      URI::file::OS2 5.27
+      URI::file::QNX 5.27
+      URI::file::Unix 5.27
+      URI::file::Win32 5.27
+      URI::ftp 5.27
+      URI::geo 5.27
+      URI::gopher 5.27
+      URI::http 5.27
+      URI::https 5.27
+      URI::icap 5.27
+      URI::icaps 5.27
+      URI::ldap 5.27
+      URI::ldapi 5.27
+      URI::ldaps 5.27
+      URI::mailto 5.27
+      URI::mms 5.27
+      URI::news 5.27
+      URI::nntp 5.27
+      URI::nntps 5.27
+      URI::pop 5.27
+      URI::rlogin 5.27
+      URI::rsync 5.27
+      URI::rtsp 5.27
+      URI::rtspu 5.27
+      URI::sftp 5.27
+      URI::sip 5.27
+      URI::sips 5.27
+      URI::snews 5.27
+      URI::ssh 5.27
+      URI::telnet 5.27
+      URI::tn3270 5.27
+      URI::urn 5.27
+      URI::urn::isbn 5.27
+      URI::urn::oid 5.27
     requirements:
       Carp 0
       Cwd 0
