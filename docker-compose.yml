@@ -6,7 +6,7 @@ services:
       - "2222:22"
     environment:
       SSH_ENABLE: "true"
-      POSTGRESQL_ENABLE="false"
+      POSTGRESQL_ENABLE: "false"
       ENTRYPOINT_CMD: 
       POSTGRES_HOST_AUTH_METHOD: trust
     entrypoint: /entrypoint
