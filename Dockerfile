@@ -134,14 +134,23 @@ RUN echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"' >> ~/.bashrc
 
 USER root
 
+# TODO: add text::iconv to the system carton, seems to be missing?
+RUN cpanm Text::Iconv
 COPY asset/src/system/motd /etc/motd
+# apt -d install neovim nano vim locales gosu openssh-server ncat exuberant-ctags vim-scripts hunspell
 COPY asset/src/system/apt /var/lib/apt/
 COPY asset/src/system/cache /var/cache/
 
 RUN apt-get install -y \
+    /var/cache/apt/archives/neovim_* \
+    /var/cache/apt/archives/nano_* \
+    /var/cache/apt/archives/vim* \
     /var/cache/apt/archives/locales_* \
+    /var/cache/apt/archives/gosu_* \
     /var/cache/apt/archives/openssh-server_* \
-    /var/cache/apt/archives/gosu_*
+    /var/cache/apt/archives/ncat_* \
+    /var/cache/apt/archives/exuberant-ctags_* \
+    /var/cache/apt/archives/hunspell_* 
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
     && echo "en_GB.UTF-8 UTF-8" >> /etc/locale.gen \
