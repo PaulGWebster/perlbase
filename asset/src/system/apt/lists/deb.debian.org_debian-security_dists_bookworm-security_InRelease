@@ -6,8 +6,8 @@ Label: Debian-Security
 Suite: stable-security
 Version: 12
 Codename: bookworm-security
-Date: Thu, 08 Feb 2024 23:01:03 UTC
-Valid-Until: Thu, 15 Feb 2024 23:01:03 UTC
+Date: Fri, 09 Feb 2024 19:04:57 UTC
+Valid-Until: Fri, 16 Feb 2024 19:04:57 UTC
 Acquire-By-Hash: yes
 Architectures: amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x
 Components: updates/main updates/contrib updates/non-free-firmware updates/non-free
@@ -154,35 +154,35 @@ SHA256:
  f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec       20 main/Contents-udeb-ppc64el.gz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855        0 main/Contents-udeb-s390x
  f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec       20 main/Contents-udeb-s390x.gz
- 203a79409c21bfacd05b7d864d7e73692156cc623751f96a8c45f4166f206873   370888 main/binary-all/Packages
- 651db2406a6583ec12fa1dfca26468d03bccf15c3ff6f4b8a3f6a22b3e4069b5    54828 main/binary-all/Packages.xz
+ d483a967e0a7979ca459b90b0a6ad8f6609d17c35a19b77360ecd128c5dcdedf   370821 main/binary-all/Packages
+ 4d731c94c5c5de12173956b45345ed746899eb5fbff088893a1e156eb96d2fab    54984 main/binary-all/Packages.xz
  9b8785f3c425a40d6f31bf7d99fc3caf183d25d9e85a9d826f8282b1b56fe93e      138 main/binary-all/Release
- 282721f5bee86af6f0de8ae50bd45d28ec18bf64eeef3b0e107871fe910a219d   854188 main/binary-amd64/Packages
- 5182c2791b3a179c068f3334ab95b3b701ecce99f3199ca6eed1cac80feef60c   136924 main/binary-amd64/Packages.xz
+ 89e7bf69cc4b88b213ec980e22a247e5675ae7d31f99bbec0322843c32e96d8a   856081 main/binary-amd64/Packages
+ 25a4dd838ad6b6e5f5a2c35940fd6dfa03b367c447489bc6997e4f6dfa4ae2c1   137280 main/binary-amd64/Packages.xz
  926c79dad2649979ea3f958a31fbdfeddd0f38692e80f70eaee7ea71ce77031f      140 main/binary-amd64/Release
- cbd04c6cdbd4ff59d7fc7079842a900a3f7285e5cb24d9845ca2b3041c0c4c3a   833096 main/binary-arm64/Packages
- 0add6ecc9d98b342925d586ae96522c7f6b0337c63b2d9f3b57775fd86971e19   134184 main/binary-arm64/Packages.xz
+ 7ab6169ca9de6930ef12164d49032073c2e7f2918ac4077122c15092bfd7340f   834989 main/binary-arm64/Packages
+ 98af45084b24e53fd761cc00818503ff93d90ec6ae03a6575ce43d2d476502f5   134576 main/binary-arm64/Packages.xz
  91d0ea8fa3f4fbc98f2c5b97661f1364786e15f5e2da52113802f105f6069f52      140 main/binary-arm64/Release
- 78e75ed30af89b4986b6f4dfb3455d4a70184fbed5a4b96008e7feacc0b37367   777025 main/binary-armel/Packages
- 72ead719a19f6da538020913d73493a8a80b470930bf153a0a93d4d211bbcd75   127728 main/binary-armel/Packages.xz
+ 23d7f27f8adc7263771e2766b2a204c487565ce06e0800a7494988c03de6b106   778918 main/binary-armel/Packages
+ aec03c083508c62763862fdb6c5d5398bcc6c95a48e56c14a31994bc059aeb14   128072 main/binary-armel/Packages.xz
  ed9e8f924580566bba0b453f12beedfa3a153fd8e475413d693b403b61b93dba      140 main/binary-armel/Release
- 02185ceba0e0228ad16d1fab42a27d1a807b5300b0cdc702cf74f04e5f342c9f   814558 main/binary-armhf/Packages
- 45195b720c3f7cd53a19ca0c61efa6c25c6fd9e7c329a37cf0b96f5f632ad44e   131552 main/binary-armhf/Packages.xz
+ e656556cd3b5a04f8640671518498171906ad6eaadcabeb5451a246538149314   816450 main/binary-armhf/Packages
+ be7bc74a064a14e58d9969df5fe64eb06d76b8985924a505f985ad9c6e374022   131904 main/binary-armhf/Packages.xz
  355b70fea7ea9ce759c124a36f7846786a43b5c825ec0d0a86360806d4ba0607      140 main/binary-armhf/Release
- b55f0635c1c5a8f58b3e196c5896a81d7a352b4c26c44ba50cc6a8ff94c377e7   849078 main/binary-i386/Packages
- c338558a8744913a6802f850a6f9ada7cbb001d446ab213063d956c8255f7cbd   136184 main/binary-i386/Packages.xz
+ bfed48074c2bf9178ee88ed660eaa2aed6bb87fcd044b472dc0074eba0daf700   850967 main/binary-i386/Packages
+ d4f304353a851efc0d40fc025a4623746b1aa84a47a5bcc7b3482d0589dd21dc   136544 main/binary-i386/Packages.xz
  a6f279efb099cecaedcccf98bcfd62e50f6f109ae5ae46aece2c8d7ce5d647be      139 main/binary-i386/Release
- 3fc75b60525f4d5772c0c30b2292ef1c3dfdbf6d1b50cadf748d4cf70b70171e   799010 main/binary-mips64el/Packages
- ffe9b5f042eac770446095ed5e2ad62222f35fa88546ff591435dd37d11d2c9b   129736 main/binary-mips64el/Packages.xz
+ f4c71f3269d0038fca4abdd42b02874f60ddc008e06fa84b271ad45b91c0d1dc   800915 main/binary-mips64el/Packages
+ 9f1bdeaaf10ff4d779796aa765fef77df23ef77614629a7be20296b7b9f86fab   130104 main/binary-mips64el/Packages.xz
  9d2253483f3c89545093f6053366161ad43352e21eb0ba69900c398c8cc7bd1d      143 main/binary-mips64el/Release
- 2c03d05f058d108472e5f120c9c9f824303e522a81b50d76401f3a191eca16c4   798511 main/binary-mipsel/Packages
- 5bb17e8dd1645fb9d29da83fdf23416cd27f4c4c329656a382c0087bde9c4087   129740 main/binary-mipsel/Packages.xz
+ 772088dadbd1da79b45f19e0293445af7ec9501c389f7faa91904a3881b919f7   800408 main/binary-mipsel/Packages
+ 027b06434acd2e0fdf8c1e67bcec95d63d569cae6e65d506745437ac86be1d38   130092 main/binary-mipsel/Packages.xz
  2489894f882fae219d11301b64f42c502165e164a9e8d49050863e4d5d80f4d3      141 main/binary-mipsel/Release
- 5a5211064e9510f94218a51483935ce85ed3137f19f06ec9d84952ff0a152080   799941 main/binary-ppc64el/Packages
- 734fdcbe038e94310d766e30c8f71919459f82d35eac7f338a15ddb2a78e6075   129996 main/binary-ppc64el/Packages.xz
+ 874487576bd05a684c3d9b49d1a897f562d56a105eb93f438756bc355b7cb375   801842 main/binary-ppc64el/Packages
+ 259764df1bafddf02d36f8b4857aa56538d718a230e4fbb683972ef55dccb064   130332 main/binary-ppc64el/Packages.xz
  89bf7a243179fbc1baa5a0b7445521ebb3d6e840328e21b18ee5bb548e9530a8      142 main/binary-ppc64el/Release
- 59182a7399509d35183a2e646f01653beba667327254367414df3f1decbeb83b   788240 main/binary-s390x/Packages
- 892c6600a68f7aa89f8ace1982f54cc01f3b9bb54258d4092778711bd0f1fb2b   128664 main/binary-s390x/Packages.xz
+ 750d54d21785d708c9b8dd63eb44671fbcf40f74de7d21b744b5b2943ba424d8   790133 main/binary-s390x/Packages
+ 460d0623d52dec6e75e7f85fc78ec5e0a7d8a66040d7de04dd1ac4a13f9fc626   129016 main/binary-s390x/Packages.xz
  ee7392ff90f498b5d1dec9598cc6103db2d6824f3ed38f9afba475b5afc005fb      140 main/binary-s390x/Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855        0 main/debian-installer/binary-all/Packages
  0040f94d11d0039505328a90b2ff48968db873e9e7967307631bf40ef5679275       32 main/debian-installer/binary-all/Packages.xz
@@ -214,11 +214,11 @@ SHA256:
  1a054fabebb7500398de7eef125769b420d9bafe3be043db9e6e75c5f0aa5518    46560 main/debian-installer/binary-s390x/Packages
  f3e84a56329556781c46c727c1dcdae1218e918a7eec8725361df1ab9844706d     6208 main/debian-installer/binary-s390x/Packages.xz
  ee7392ff90f498b5d1dec9598cc6103db2d6824f3ed38f9afba475b5afc005fb      140 main/debian-installer/binary-s390x/Release
- 3c1a1adccf937827364899058fc589510ecfb5677c733ed66f1dafe589dfb2ac   629463 main/i18n/Translation-en
- 9398543519c74d087becf3a2b2b8f180184ea1c3a2ca59ba8ac1fa73635002b5    81360 main/i18n/Translation-en.xz
+ 933999eae53be41b58e077ccd151d70e95851224f1451e699bd513528fb4628d   630558 main/i18n/Translation-en
+ e173df2e1f264022cbf6e4238cbc1abb9d6ad20519e4635cec5c75747612a7fe    81556 main/i18n/Translation-en.xz
  3dde587ee919e132e0b33ecee143fc36edbefa170ab94a23a3f1153a4b7e307e      141 main/source/Release
- c23f79b5e1fcd55401f4452834118234d3116c738ed57afc08059500ee0f36c1  1248183 main/source/Sources
- 562bd9a5e82195909ee23b78ab3c260244ca73b318957aa1033a829039060266    79812 main/source/Sources.xz
+ 33cdbc55de70f69e6b9e3ba40c571d9b5a38217be2bed7870b3df4368cee0c00  1245618 main/source/Sources
+ 3b2471531b98f05bfc16428d648e8ca1a19befdbd0d97e9873c8450f3709fa2a    79680 main/source/Sources.xz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855        0 non-free-firmware/Contents-amd64
  f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec       20 non-free-firmware/Contents-amd64.gz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855        0 non-free-firmware/Contents-arm64
@@ -427,29 +427,29 @@ SHA256:
  0040f94d11d0039505328a90b2ff48968db873e9e7967307631bf40ef5679275       32 non-free/source/Sources.xz
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE7VQTEqM/ESjxCxxsVEBHYru26FMFAmXFXTEACgkQVEBHYru2
-6FOMtRAAvle+KGFYBLDqjYssPjNq8arlawLKMDVa6cW61UVOt44nfQouYyG8SQGu
-tUcHk8kNnz0hECLSxHNp9Rqam53P/y5HHG2qaxnkaMZfUFhDU1WGIVndJ3EpZPd2
-9ebUCFshqycVGBsbPFLyZklKRT8Na0TaWzybQjf+s6ukJR3uxPJC8liCToAFwFzi
-Z6VjHWN1mhYpKQbKwKXAuhu5tddXR0SX+fLHJmkKIm7sR9Ao4vsxJysy8CugPz+B
-svyh7FmDvKJLWpiY3Y6lOJ8Y+nD+Ylr00pzL1qtcgblBFIFe7+RURAKxBailDLcs
-H2ZWrswEJ/ER2JvR2GZee4Uceizj428EdMPXazDKstXu3njxVRH+2D8ABFkLk4k6
-MFWIzyyyI57CoCiMjbOkPr14LOsYiYn2E95nlf6PBD84spEKjRV0pXBakv3Dfu9P
-M7XXHTxPV1lZNF6gFyD2HPFpk4RV9414GfLxkxp06GN+G181sDnxWzZqUb/rWwYK
-z/WLCZ5p6zKVstayQQ9P9p3kmqYz579/e3hcy3Eat+iIVpiOsrRpB5oivA7V4k22
-w/4ZrAZp2XCxcYWbjW6ylfu2NwZH55faf00xbJ0DI8SOplF8FOOXeUUWS4uje6k8
-+nLqXEXccGa/3ssaTQkV7ICBADv4sZHIqrqJKZDbnUubztOnhC2JAjMEAQEIAB0W
-IQSwyrkmbow5KXmLPu695tK5IW7HqAUCZcVdMQAKCRC95tK5IW7HqL7jD/4/soql
-zMenIQXJBW1K5VJn+kBErM+YpaGjwnUdJYsoEWGcxzW7aovR8EWtbTSRrJMRvXPW
-pTPUL+jz3NF0HIKGQWq3BbR2esCJZHzqHVA9kNKe4OHTFtMt0Fg5/+nsY35QimEs
-hW6S8nQ4ervOxxZ4l9gxdWQnJRChleBvCA59aWWP/YcOSHl0avwjAZgu1ErumUtt
-o6hJbfoBAj3znmfju+y+u77vh0biyMQPnqF3SprHdYYat0aMHRNWKIhZkJItOu52
-sI9NDdPuIWFZxC5hLd2RxrfQ3kkeuIV53W130hESnnvCCWd4ZcXiO8H3RnuWmnJT
-D74dlhgE52btzMdGgnROAEL1QoiI3A7ErLBMD6rDMufwxu1/0151P/Rxb/0fOvu2
-xTjRft5jDvh3vqAKJqspzdsOWyIzHOAdamXMsLdByNOi2Be+O1Q6zOaQz0NMUXJO
-PaVe/ysTpqAvpOdSZRi6P+OPb0Hc9HZayKCwHm8Otq1G/76HwELb7XMedoZ0cmrG
-Duv7x0dmIKQtV5Th+pAYgh0g9dAgmSWmpO/ZZAo4Cw7Fx601gjaRPQHr/+Eq4VOp
-ris01et83G/dxQypcG+Onk/s6zVjmRrgaGVtrMpryV2guCa7qrGRG4ecM65Y0MuH
-1H0/mS0mB84pYFxCkV1MaXTJVW2rU0s7LW5ScA==
-=Ma0l
+iQIzBAEBCAAdFiEE7VQTEqM/ESjxCxxsVEBHYru26FMFAmXGd1oACgkQVEBHYru2
+6FNCpQ/+Ix2D0FdxyRhE2uuFm2oXzejT1SaG7kk4SPTV+nfMCwG1yyvaEu+0qVFf
+9ubwGE2mrJJB4KDD563MJsIf02zwG4dC4pir3BsJ9jyLNdqVU/gyiKFSv338fLjr
+WffjbulhuLQoKu8A5va/vRhyE3FIbuw1mwzTrUPaUCR8PGX0fQivL2bvOU9RwMMR
+GpBO/ynKmxMqHh+3QLT39D+A0YzEz3ldsy7j/AZxntDJTw6C9dpkJ1YYg/myfwUB
+yFondIq1iuSZSVNW5TQ4ErbnDiX51AhDjKcujIPRL5BF7rQon6kG5w6/u+Tppkav
+F0hgr3NKuV/JpN21USfszlxZcJy23hhsXPWR74XHd2PkyNbHOT33KcCyhZMbvmqW
+tHj+o4/tPCbkU4qUSjJMArCaYviBaGjgdfvLAEUiuVwJHG4F9kMdz4NgOBpdoeU5
+ytN61F3FRjqlBwjndKbmsWxvJymj8AYMddgaRMwQVht6A6w+1v+iU/jAT0vrBbu0
+Lds2IxMFd+SBOtwt6PF5LvrHTOzDBmnI1IHEggz5iQZBQW0WQfy9e/u6q/gQppoq
+gRRui4csnAJoSKPIPlwOR/rhM9PX5Fbc/PGRWncnL3kvx55xpFduf/dTRCl6XZVj
+yRsEWVdJJIMoMek/lfgurV0oh9SpPTdALnj5dhXsOwWfGafrWGyJAjMEAQEIAB0W
+IQSwyrkmbow5KXmLPu695tK5IW7HqAUCZcZ3WgAKCRC95tK5IW7HqE7yEADBdXuC
+ShuCCOT4WW+XMck4uHNW2qVZBCm3/GAOssrqNlcDS3w46Edx80dxKG/j7L7wlCpG
+UM6D5yDU7+F9ZyFuyW72R4/IjQp2dtWsFYr4FTJge8a4mfZB4fH3ckU/NDpTPdFe
+FAUdDp/3l494u4fy2uBLgMbQ/kw8sn2oTn/86fRUepnqpbaMp4Fy9kp/d5KsEC1s
+eRybGk4e6C9XsD23Tg2KCZuikUfa8uZ0/C9C8kAKSc/Ho/O3h8AUGBibeOO64gjU
+Y0ptye48IhZKlsaai92d1bK259ymnHAXHbk9AoghNE/gruWMjHZuV1fewiX3lV2+
+Hv1v96Thkf8AWhnYRGlhUYsvdqGYZx5HEH2mfMzW3meZFjFiaQfMFHJ78oYOLmix
+xsb+l0ZlaTsnIF0rx8dkJPD3+el0HXoENbz6lJGJKjQ4/WmHqpqHLKMKTsiA1e4c
+fCrlbEQk/fS/xLGNGk5jbKh04p7YFg4qmlay/J3a18pDTZO0BVnXTxTK2wnf0Psl
+7n2I0NElzgdq/XrMtFUpHqyxlwK1Xn2yFYvyuGnN31GpyCbFpEP+FrFum5pmH3sJ
+7YkNc2yvqePNtYP3iM/FDA0d8qbebH1CrOGvxJ3K8ixv/lJIb+JGmJQnGlOuwCUG
+5YcvEop4Zcdk3+5KSQ4VqKOZUNMDjqWNVPoZbA==
+=1nHv
 -----END PGP SIGNATURE-----
