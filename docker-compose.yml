@@ -6,9 +6,9 @@ services:
       - "2222:22"
     environment:
       SSH_ENABLE: "true"
-      POSTGRESQL_ENABLE: "true"
+      POSTGRESQL_ENABLE="false"
       ENTRYPOINT_CMD: 
       POSTGRES_HOST_AUTH_METHOD: trust
     entrypoint: /entrypoint
     volumes:
-      - ../postgres-data:/var/lib/postgresql/data
+      - .vol/postgres-data:/var/lib/postgresql/data
