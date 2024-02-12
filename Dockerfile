@@ -7,7 +7,6 @@ RUN mkdir /run/sshd
 FROM base AS build
 
 # Build perl
-
 RUN mkdir -p /build/perl
 COPY asset/src/perl-5.* /build/perl
 
@@ -26,7 +25,6 @@ RUN ./Configure \
     && rm -rf /build/perl
  
 # Build Python-3.11.2
-
 RUN mkdir -p /build/python
 COPY asset/src/Python-* /build/python
 
@@ -41,7 +39,6 @@ RUN ./configure \
     && rm -rf /build/python
 
 # Build cpanm
-
 RUN mkdir -p /build/cpanm
 COPY asset/src/App-cpanminus* /build/cpanm
 
@@ -53,7 +50,6 @@ RUN perl Makefile.PL \
     && rm -rf /build/cpanm  
 
 # Build lib local
-
 RUN mkdir -p /build/liblocal
 COPY asset/src/local-lib-* /build/liblocal
 
@@ -65,7 +61,6 @@ RUN perl Makefile.PL \
     && rm -rf /build/liblocal
 
 # Build lz4
-
 RUN mkdir -p /build/lz4
 COPY asset/src/lz4-* /build/lz4
 
@@ -77,7 +72,6 @@ RUN make -j4 \
     && rm -rf /build/lz4
 
 # Build postgresql
-
 RUN mkdir -p /build/postgresql
 COPY asset/src/postgresql-* /build/postgresql
 
@@ -97,7 +91,6 @@ RUN ./configure \
     && rm -rf /build/postgresql
 
 # Install Carton
-
 RUN mkdir -p /build/carton
 COPY asset/src/carton /build/carton
 
@@ -107,25 +100,21 @@ RUN cpanm --from "$PWD/vendor/cache" --installdeps --notest --quiet .
 RUN rm -rf /build/carton
 
 # Clean up
-
 RUN rm -rf /build
 
 FROM base AS config
 
 # BEWARE: COPY does not preserve the user and group ownership of the files
 # everything will be owned by root:root
-
 COPY --from=build /bin /bin
 COPY --from=build /etc /etc
 COPY --from=build /lib /lib
 COPY --from=build /usr /usr
-# COPY --from=build --chown=perl:perl /home/perl /home/perl
 
-# Strip any unneeded files
 # TODO
+# Strip any unneeded files
 
 # Final setup
-
 ENV PERL5LIB=/usr/share/perl5:$PERL5LIB
 RUN adduser --disabled-password --gecos "" perl
 
@@ -145,8 +134,7 @@ RUN echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"' >> ~/.bashrc
 
 USER root
 
-RUN echo 0
-
+COPY asset/src/system/motd /etc/motd
 COPY asset/src/system/apt /var/lib/apt/
 COPY asset/src/system/cache /var/cache/
 
@@ -189,7 +177,6 @@ RUN groupadd -r postgres; \
     chown -R postgres:postgres "$PGDATA"; \
     chmod 1777 "$PGDATA"
 
-RUN echo 0
 COPY asset/src/system/start-postgres.sh /start-postgres
 RUN chmod +x /start-postgres
 
