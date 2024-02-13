@@ -63,7 +63,6 @@ To run the project locally, follow these steps:
 2. cd perlbase
 3. read [auth/README.md](auth/README.md)
    - Follow the instructions to create your own ssh keys
-   - If you already have a public key or you do not wish to access the image with ssh, you can skip this step
 4. ./recreateimages.sh
    - When prompted for if the image should be loaded, type 'y' and press enter.
  - docker build . -t perlbase:latest
