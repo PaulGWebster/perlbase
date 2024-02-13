@@ -1,0 +1,75 @@
+#!perl
+
+package
+  patchperl;
+# ABSTRACT: patch a perl source tree
+
+use strict;
+use warnings;
+use Devel::PatchPerl;
+use Getopt::Long;
+
+my $version    = '';
+my $patchlevel = '';
+
+GetOptions(
+  version => \$version,
+  patchlevel => \$patchlevel,
+) or die("Error in command line arguments\n");
+
+if ( $version ) {
+  my $vers = Devel::PatchPerl->_patchperl_version();
+  print "Devel::PatchPerl $vers\n";
+}
+else {
+  local $ENV{PERL5_PATCHPERL_PATCHLEVEL} = $patchlevel;
+  Devel::PatchPerl->patch_source($ARGV[1], $ARGV[0]);
+}
+
+__END__
+
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+patchperl - patch a perl source tree
+
+=head1 VERSION
+
+version 2.08
+
+=head1 SYNOPSIS
+
+  patchperl
+
+=head1 COMMAND LINE SWITCHES
+
+=over
+
+=item C<--version>
+
+Prints the version of L<Devel::PatchPerl> to STDOUT and exits
+
+=item C<--patchlevel>
+
+Devel::PatchPerl will normally update the C<patchlevel.h> file in the perl source tree
+to indicate that it has applied local patches. This behaviour is negated if it is
+detected that it is operating in a git repository. To override this and update
+C<patchlevel.h> when in a Git repository use this switch.
+
+=back
+
+=head1 AUTHOR
+
+Chris Williams <chris@bingosnet.co.uk>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2021 by Chris Williams and Marcus Holland-Moritz.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
