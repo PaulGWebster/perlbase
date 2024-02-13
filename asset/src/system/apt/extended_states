@@ -1442,11 +1442,3 @@ Package: libgdk-pixbuf2.0-common
 Architecture: amd64
 Auto-Installed: 1
 
-Package: libxmuu1
-Architecture: amd64
-Auto-Installed: 1
-
-Package: xauth
-Architecture: amd64
-Auto-Installed: 1
-
