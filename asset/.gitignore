@@ -1,2 +1,4 @@
 *.img
 !.gitignore
+perl-*
+!perl-5.36.3
